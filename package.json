@@ -1,0 +1,86 @@
+{
+  "name": "microsoft-office",
+  "productName": "Microsoft Office",
+  "version": "2022.8.1",
+  "description": "Microsoft Office App is made especially for the Linux Operating System and is a much better alternative for Google Docs.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "keywords": [
+    "Microsoft",
+    "Office",
+    "Productivity",
+    "App"
+  ],
+  "author": "Comp Labs <complabs28@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^16.2.8",
+    "electron-packager": "^15.5.1",
+    "electron-builder": "^22.3.2"
+  },
+  "build": {
+    "productName": "Microsoft Office",
+    "generateUpdatesFilesForAllChannels": true,
+    "mac": {
+      "artifactName": "Microsoft-Office.${ext}",
+      "target": [
+        {
+          "arch": "universal",
+          "target": "dmg"
+        },
+        {
+          "arch": "universal",
+          "target": "zip"
+        }
+      ],
+      "category": "com.complabs.Microsoft-Office.category.productivity",
+      "darkModeSupport": true,
+      "hardenedRuntime": true,
+      "asarUnpack": "**/*.node"
+    },
+    "linux": {
+      "artifactName": "Microsoft-Office-${arch}.${ext}",
+      "category": "CompLabs;MicrosoftOffice;Category;Productivity",
+      "executableName": "Microsoft-Office",
+      "target": [
+        {
+          "arch": "x64",
+          "target": "snap"
+        },
+        {
+          "arch": "x64",
+          "target": "AppImage"
+        },
+        {
+          "arch": "x64",
+          "target": "deb"
+        }
+      ]
+    },
+    "deb": {
+      "depends": [
+        "libgtk-3-0",
+        "libnss3",
+        "libxtst6",
+        "xdg-utils",
+        "libatspi2.0-0",
+        "libuuid1"
+      ]
+    },
+    "win": {
+      "artifactName": "Microsoft-Office.${ext}",
+      "target": [
+        {
+          "arch": [
+            "ia32",
+            "x64"
+          ],
+          "target": "nsis"
+        }
+      ]
+    }
+  }
+}
