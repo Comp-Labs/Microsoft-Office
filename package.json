@@ -1,7 +1,7 @@
 {
   "name": "microsoft-office",
   "productName": "Microsoft Office",
-  "version": "2022.8.1",
+  "version": "2023.1.1",
   "description": "Microsoft Office App is made especially for the Linux Operating System and is a much better alternative for Google Docs.",
   "main": "main.js",
   "scripts": {
